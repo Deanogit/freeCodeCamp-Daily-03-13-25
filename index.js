@@ -36,7 +36,7 @@ function convertListItem(markdown) {
     const filterString = /^[\s]*[1-9+][\.{1}][\s+]/;
     let testString = markdown.split(filterString);
     console.log('Test String Array: ', testString);
-    let string = testString[1];
+    let string = testString[1].trim();
     console.log('Test string: ', string);
     let result = `<li>${string}</li>`;
     return result;
