@@ -14,7 +14,7 @@
 // Note: The console may not display HTML tags in strings when logging messages. Check the browser console to see logs with tags included.
 
 function convertListItem(markdown) {
-  console.log(markdown);
+  console.log('The initial string: ', markdown);
   // Start with zero or more spaces, followed by
   // \s	Matches whitespace characters (space, tab, newline)
   // x*	Matches zero or more occurrences of x
@@ -30,14 +30,14 @@ function convertListItem(markdown) {
   // At least one space, and then
   // The list item text.
   const regex = /^[\s]*[1-9+][\.{1}][\s+][a-z+]/i;
-  console.log(regex.test(markdown));
+  console.log('Test if regex works: ', regex.test(markdown));
   if (regex.test(markdown)) {
     // add <li>${string}</li>
-    console.log('Return the string!');
     const filterString = /^[\s]*[1-9+][\.{1}][\s+]/;
     let testString = markdown.split(filterString);
-    console.log(testString[1]);
+    console.log('Test String Array: ', testString);
     let string = testString[1];
+    console.log('Test string: ', string);
     return `<li>${string}</li>`;
   }
   return 'Invalid format';
