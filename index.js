@@ -32,7 +32,15 @@ function convertListItem(markdown) {
   const regex = /^[\s]*[1-9+][\.{1}][\s+][a-z+]/i;
   console.log(regex.test(markdown));
   if (regex.test(markdown)) {
+    // add <li>${string}</li>
     console.log('Return the string!');
+    const filterString = /^[\s]*[1-9+][\.{1}][\s+]/;
+    let testString = markdown.split(filterString);
+    console.log(testString[1]);
+    let string = testString[1];
+    return `<li>${string}</li>`;
   }
   return 'Invalid format';
 }
+
+convertListItem(' 1.  Another item');
