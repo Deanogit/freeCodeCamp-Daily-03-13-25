@@ -28,7 +28,11 @@ function convertListItem(markdown) {
   // console.log(regex.test(markdown))
   // at this point not sure if its working
   // At least one space, and then
-  const regex = /^[\s*][1-9+][\.{1}][\s+][a-z+]/i;
+  // The list item text.
+  const regex = /^[\s]*[1-9+][\.{1}][\s+][a-z+]/i;
   console.log(regex.test(markdown));
-  return markdown;
+  if (regex.test(markdown)) {
+    console.log('Return the string!');
+  }
+  return 'Invalid format';
 }
